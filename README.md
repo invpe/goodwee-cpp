@@ -1,2 +1,43 @@
 # goodwee-cpp
-Integrating with goodwee inverter readings with c++
+
+This is a simple implementation for working with the goodwee (`GW10K-ET`) inverter over udp, to retrieve runtime data.
+
+
+```
+g++ goodwee.cpp
+./a.out
+
+Timestamp: 2025-08-29T17:38:03Z
+ppv: 1300
+e_total: 9066.1
+e_total_exp: 8896.8
+e_total_imp: 238.3
+```
+
+
+Mapping of the positions done with the help of the goodwee python lib, using attached `goodwee.py` file.
+
+
+```
+python3 goodwee.py
+
+Parsed Data:
+timestamp: 2025-08-29 19:33:17
+...
+e_total: 9066.1
+e_day: 35.1
+e_total_exp: 8896.9
+h_total: 6779
+e_day_exp: 26.5
+e_total_imp: 238.3
+e_day_imp: 0.0
+e_load_total: 6775.3
+e_load_day: 23.8
+e_bat_charge_total: 2348.6
+e_bat_charge_day: 18.2
+e_bat_discharge_total: 2077.1
+...
+
+RAW HEX:
+aa55f703fa19081d13211206ae00000000000007110000000000000000000000000000000000000000000000000200095a00141386000001b0094a00181387000002270924002513870000034400010000072a000000000000000000000000096000021386000100000011094700191386000100000221092500051387000100000046000000cc00000027000003af00000287000004a3000701b0000001b740201e570f2a107f002c000007640002000000200001000000000000000162250000015f00015b8900001a7b01090000094f0000000108a900ee00005bbe00b600005123006400080000000000000000000000000000020001c0000307850000d8bb
+```
